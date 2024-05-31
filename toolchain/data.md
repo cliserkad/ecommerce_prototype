@@ -1,0 +1,1 @@
+All data will be stores in a PostGreSQL database to retrieve and send data using POST and GET requests.
