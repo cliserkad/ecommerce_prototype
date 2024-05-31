@@ -1,0 +1,1 @@
+We will also create a feature to put reviews on the products and a rating system from 1 - 5 stars
