@@ -8,12 +8,28 @@ public abstract class User extends ClientSession {
 	String phone;
 	String email;
 
-	abstract Listing submitListing(Listing submission);
+	/**
+	 * attempts to submit the provided listing
+	 * @return true on success, false on failure
+	 */
+	abstract boolean submitListing(Listing submission);
 
-	abstract Review submitReview(Review submission);
+	/**
+	 * attempts to submit the provided review
+	 * @return true on success, false on failure
+	 */
+	abstract boolean submitReview(Review submission);
 
-	abstract Order submitOrder(Order submission);
+	/**
+	 * attempts to submit the provided order
+	 * @return true on success, false on failure
+	 */
+	abstract boolean submitOrder(Order submission);
 
+	/**
+	 * searches for a product by name
+	 * @return a set of listings that match the search criteria
+	 */
 	abstract Set<Listing> searchForProduct(String productName);
 
 }
