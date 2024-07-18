@@ -1,4 +1,5 @@
 public class Review {
+	public final long id;
 	public final Listing listing;
 	public final int stars;
 	public final String text;
