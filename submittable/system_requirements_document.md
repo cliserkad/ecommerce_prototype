@@ -66,7 +66,72 @@ Basic search and filtering capabilities
 
 # Class Diagram
 
-![Class Diagram](class_uml.png)
+```mermaid
+classDiagram
+    class User {
+        <<entity>>
+        +id: long
+        +name: String = "none"
+        +phone: String
+        +email: string
+        +creditCards: List&ltCreditCard&gt = empty list
+        +shippingAddresses: List&ltPhysicalAddress&gt = empty list
+        +searchForProduct() List&ltProduct&gt
+        +submitListing(listing: Listing)
+        +submitOrder(order: Order)
+        +submitReview(review: Review)
+    }
+    
+    class Listing {
+        <<entity>>
+        +id: long
+        +name: String
+        +description: String
+        +weightInGrams: int
+        +stampsOfApproval: List&ltString&gt
+        +imageURLS: List&ltString&gt
+        +reviews: List&ltReview&gt
+        +priceInCents: int
+    }
+    
+    class Order {
+        <<entity>>
+        +id: long
+        +purchaser: User
+        +items: List&ltListing&gt
+        +shippingAddress: PhysicalAddress
+        +paymentMethod: CreditCard
+        +orderDate: Timestamp = now
+        +totalPiceInCents() int
+    }
+    
+    class Review {
+        <<entity>>
+        +id: long
+        +itemReviewed: Listing
+        +stars: int
+        +comment: String
+    }
+    
+    class CreditCard {
+        <<entity>>
+        +billingAddress: PhysicalAddress
+        +cardNumber: String
+        +securityCode: String
+        +pin: string
+        +expiry: Timestamp
+    }
+    
+    class PhysicalAddress {
+        <<entity>>
+        +street: String
+        +city: String
+        +province: String
+        +country: String
+        +zip: String
+    }
+    
+```
 
 # Use Case Diagram
 
