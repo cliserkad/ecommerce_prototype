@@ -68,6 +68,17 @@ Basic search and filtering capabilities
 
 ```mermaid
 classDiagram
+    direction TD
+    
+    Review "1" o-- "1" Listing
+    Order "1" o-- "1" Listing
+    CreditCard "1" o-- "1" PhysicalAddress
+    User "1" o-- "0..*" CreditCard
+    User "1" o-- "0..*" PhysicalAddress
+    Review "1" o-- "1" User
+    Order "1" o-- "1" User
+    Order "1" o-- "1" PhysicalAddress
+    
     class User {
         <<entity>>
         +id: long
@@ -108,6 +119,7 @@ classDiagram
     class Review {
         <<entity>>
         +id: long
+        +reviewer: User
         +itemReviewed: Listing
         +stars: int
         +comment: String
