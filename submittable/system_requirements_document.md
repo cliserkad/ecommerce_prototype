@@ -151,4 +151,75 @@ classDiagram
 
 
 # System Sequence Charts
-![System Sequence Chart](system_sequence_chart.jpg)
+
+```mermaid
+---
+title: Post Product
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: Submit Product Listing
+    s -->> u: Product Listing Confirmation
+```
+
+```mermaid
+---
+title: Post Review
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: 1st Message
+    s -->> u: 2nd Message
+```
+
+```mermaid
+---
+title: Create Account
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: 1st Message
+    s -->> u: 2nd Message
+```
+
+```mermaid
+---
+title: Purchase Product
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: 1st Message
+    s -->> u: 2nd Message
+```
+
+```mermaid
+---
+title: Add To Cart
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: 1st Message
+    s -->> u: 2nd Message
+```
+
+```mermaid
+---
+title: Product Search
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: 1st Message
+    s -->> u: 2nd Message
+```
