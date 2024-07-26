@@ -3,12 +3,12 @@
 
 
 
-## Design-Level Class Diagrams
+# Design-Level Class Diagrams
 
 
 
 
-## Object Statechart Diagrams
+# Object Statechart Diagrams
 
 1. Order
 
@@ -38,4 +38,4 @@
 
 
 
-## First Cut Domain Sequence Diagram
+# First Cut Domain Sequence Diagram
