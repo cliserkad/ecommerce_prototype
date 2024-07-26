@@ -127,6 +127,13 @@ submitOrder(order: Order)
 submitReview(review: Review)
 	POST review to Database
 	RETURN
+	
+totalPriceInCents() int
+	INT total = 0
+	FOR item in items
+		total += item.priceInCents
+	END FOR
+	RETURN total
 ```
 
 # Object Statechart Diagrams
