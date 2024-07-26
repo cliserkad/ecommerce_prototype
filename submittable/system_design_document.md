@@ -35,7 +35,7 @@ classDiagram
         +email: string
         +creditCards: List&ltCreditCard&gt = empty list
         +shippingAddresses: List&ltPhysicalAddress&gt = empty list
-        +searchForProduct() List&ltProduct&gt
+        +searchForProduct(name: String) List&ltProduct&gt
         +submitListing(listing: Listing)
         +submitOrder(order: Order)
         +submitReview(review: Review)
@@ -51,6 +51,7 @@ classDiagram
         +imageURLS: List&ltString&gt
         +reviews: List&ltReview&gt
         +priceInCents: int
+        +quantity: int
     }
     
     class Order {
@@ -93,7 +94,40 @@ classDiagram
     
 ```
 
-
+## Psuedocode
+```
+searchForProduct(name: String) List<Product>
+	GET Listings from Database
+	FOR listing in Listings
+		IF listing.name contains name
+			RETURN Product
+		END IF
+	RETURN null
+	END FOR
+	
+submitListing(listing: Listing)
+	POST listing to Database
+	RETURN
+	
+submitOrder(order: Order)
+	POST order to Database
+	GET orders from Database
+	BOOLEAN allInStock = TRUE
+	FOR order in orders
+		FOR listing in order.items
+			IF !(listing.quantity > 0)
+				allInStock = FALSE
+			END IF
+		END FOR
+	END FOR
+	IF allInStock
+		fufillOrder(order)
+	RETURN
+	
+submitReview(review: Review)
+	POST review to Database
+	RETURN
+```
 
 # Object Statechart Diagrams
 
