@@ -1,5 +1,14 @@
 # Introduction
+## Purpose
+This document outlines the system requirements for developing a basic ecommerce website. The website’s core functionality is to support online retail operations, including posting product listings, shopping cart functionality, user accounts, and order processing.
 
+## Scope
+The ecommerce webservice will include the following key components:
+Product catalog and inventory management
+User registration and authentication
+Shopping cart functionality
+Order placement and processing
+Basic search and filtering capabilities
 
 
 
