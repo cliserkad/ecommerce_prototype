@@ -196,9 +196,18 @@ title: Post Review
 sequenceDiagram
     autonumber
     participant u as Purchaser
+    participant c as Client
     participant s as System
-    u ->> s: Submit Review
-    s -->> u: Review Creation Acknowledgement / Denial
+    u -> c: Enter Product Listing URL
+    c -> s: Request Product Listing
+    s -->> c: Product Listing
+    c -->> u: Display Product Listing
+    u -> c: Writes Review
+    u -> c: Selects Star Rating
+    u -> c: Selects "Submit Review" Option
+    c ->> s: Submit Review
+    s -->> c: Review Creation Acknowledgement / Denial
+    c -->> u: Display Review
 ```
 
 ```mermaid
@@ -208,10 +217,14 @@ title: Create Account
 sequenceDiagram
     autonumber
     participant u as User
+    participant c as Client
     participant s as System
-    u ->> s: Create Account
-    s -->> u: Account Creation Acknowledgement
-    s -->> u: User Account Linked with Current Session
+    u ->> c: Enter Email, Phone, Name
+    c -->> u: Display Confirmation 
+    u ->> c: Select "Confirm Account Creation" Option
+    c ->> s: Create Account
+    s -->> c: Account Creation Acknowledgement
+    c -->> u: Display Account Creation Acknowledgement
 ```
 
 ```mermaid
@@ -221,12 +234,15 @@ title: Purchase Product
 sequenceDiagram
     autonumber
     participant u as User
+    participant c as Client
     participant s as System
-    u ->> s: Add Listing to Order
-    s -->> u: Acknowledge Order Addition
-    u ->> s: Submit Order
-    s -->> u: Order Creation Acknowledgement
-    s -->> u: Order Fulfillment Time Estimate (Immediate or Delayed)
+    u ->> c: Add Listing to Order
+    c -->> u: Show Listing in "Cart"
+    u ->> c: Select "Submit Order" Option
+    c ->> s: Submit Order
+    s -->> c: Order Creation Acknowledgement
+    s -->> c: Order Fulfillment Time Estimate (Immediate or Delayed)
+    c -->> u: Display Order Acknowledgement
 ```
 
 ```mermaid
@@ -236,8 +252,11 @@ title: Product Search
 sequenceDiagram
     autonumber
     participant u as User
+    participant c as Client
     participant s as System
-    u ->> s: Search for Product with Name
-    s -->> u: List of Products Matching Search
+    u ->> c: Enter Product Name
+    c ->> s: Search for Product with Name
+    s -->> c: List of Products Matching Search
+    c -->> u: Display List of Products
 ```
        
