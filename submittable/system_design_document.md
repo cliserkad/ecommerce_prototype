@@ -167,3 +167,77 @@ totalPriceInCents() int
 
 
 # First Cut Domain Sequence Diagram
+
+```mermaid
+---
+title: Post Product
+---
+sequenceDiagram
+    autonumber
+	participant u as Vendor
+    participant c as Client
+    participant s as Server
+    u -> c: Selects Photos from Local Storage
+    c -> u: Display Selected Photos
+    u -> c: Select Upload Option
+    c -> s: Submit Product Photos
+    s -->> c: Photo Upload Acknowledgement, with URLs
+    c -> u: Display Product Listing Form
+    u -> c: Fills Out Product Listing Form
+    c ->> s: Submit Product Listing
+    s -->> c: Product Listing Acknowledgement
+    c -> u: Display Product Listing
+```
+
+```mermaid
+---
+title: Post Review
+---
+sequenceDiagram
+    autonumber
+    participant u as Purchaser
+    participant s as System
+    u ->> s: Submit Review
+    s -->> u: Review Creation Acknowledgement / Denial
+```
+
+```mermaid
+---
+title: Create Account
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: Create Account
+    s -->> u: Account Creation Acknowledgement
+    s -->> u: User Account Linked with Current Session
+```
+
+```mermaid
+---
+title: Purchase Product
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: Add Listing to Order
+    s -->> u: Acknowledge Order Addition
+    u ->> s: Submit Order
+    s -->> u: Order Creation Acknowledgement
+    s -->> u: Order Fulfillment Time Estimate (Immediate or Delayed)
+```
+
+```mermaid
+---
+title: Product Search
+---
+sequenceDiagram
+    autonumber
+    participant u as User
+    participant s as System
+    u ->> s: Search for Product with Name
+    s -->> u: List of Products Matching Search
+```
+       
