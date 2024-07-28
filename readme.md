@@ -1,4 +1,7 @@
 # Ecommerce Prototype
 
-We as a group are going to create a recreation of an ECommerce website containing all of the classes for items for example the name of the product, the producer, the price, the genre of product, and other minor details about the item.
+A planning exercise describing an ECommerce website containing UML diagrams and written documentation.  
+[Project Plan](submittable/project_plan.md)  
+[System Requirements Document](submittable/system_requirements_document.md)  
+[System Design Document](submittable/system_design_document.md)  
 
