@@ -163,6 +163,12 @@ totalPriceInCents() int
    
 ![User State Chart](user_state_chart.jpg)
 
+5. Physical Address
+
+   
+![Physical Address State Chart](physical_address_state_chart.jpg)
+
+
 
 
 
