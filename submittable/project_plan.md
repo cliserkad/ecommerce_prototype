@@ -137,6 +137,6 @@ meetings, similar to a scrum.
 
 ## Tracking and Control Mechanisms
 
-We are using GitHub to commit changes to our documentation.
-Technologies used include Git hosted on GitHub, Discord, and Google Drive.
+We are using Git hosted on GitHub to commit changes to our documentation. 
+Our real time communication will be done on Discord. Real time editing will be done on Google Docs.
 <!-- If you're reviewing this, add a comment to this line on GitHub -->
